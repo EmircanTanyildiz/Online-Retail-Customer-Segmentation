@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Segmentation</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <span class="mark"></span>
+      <div>
+        <h1>Customer Segmentation</h1>
+        <p>Enter customer data to predict the segment.</p>
+      </div>
+    </header>
+
+    <div class="layout">
+      <section class="panel form-panel">
+        <form id="predict-form">
+          <div class="fields">
+            <label><span class="num">01</span>Age<input type="number" name="age" min="18" max="100" value="35" required></label>
+            <label><span class="num">02</span>Annual Income<input type="number" name="annual_income" min="0" step="0.01" value="55000" required></label>
+            <label><span class="num">03</span>Months Active<input type="number" name="months_active" min="0" max="120" value="24" required></label>
+            <label><span class="num">04</span>Monthly Spend<input type="number" name="avg_monthly_spend" min="0" step="0.01" value="300" required></label>
+            <label><span class="num">05</span>Purchase Frequency<input type="number" name="purchase_frequency" min="0" step="0.01" value="2.5" required></label>
+            <label><span class="num">06</span>Avg. Order Value<input type="number" name="avg_order_value" min="0" step="0.01" value="85" required></label>
+            <label><span class="num">07</span>Discount Rate (0–1)<input type="number" name="discount_usage_rate" min="0" max="1" step="0.01" value="0.2" required></label>
+            <label><span class="num">08</span>Return Rate (0–1)<input type="number" name="return_rate" min="0" max="1" step="0.01" value="0.08" required></label>
+            <label><span class="num">09</span>Browsing (min)<input type="number" name="browsing_time_minutes" min="0" step="0.01" value="60" required></label>
+            <label><span class="num">10</span>Support Interactions<input type="number" name="support_interactions" min="0" step="0.1" value="1" required></label>
+            <label><span class="num">11</span>Payment<select name="payment_method" id="payment_method" required></select></label>
+            <label><span class="num">12</span>Region<select name="region" id="region" required></select></label>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn" id="submit-btn">Predict</button>
+            <button type="button" class="btn btn-ghost" id="fill-sample">Sample</button>
+          </div>
+          <p id="error-msg" class="error-msg"></p>
+        </form>
+      </section>
+
+      <section class="panel result-panel" id="result-panel">
+        <p class="result-placeholder">Result will appear here.</p>
+      </section>
+    </div>
+  </main>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
